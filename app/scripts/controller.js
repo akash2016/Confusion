@@ -81,10 +81,11 @@ app.controller('FeedbackController', ['$scope', function ($scope) {
         }
     };
         }])
-app.controller('DishDetailController', ['$scope','menuFactory', function ($scope,menuFactory) {
+app.controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
    
-    $scope.dish = menuFactory.getDish(3);
-        }])
+    var dish= menuFactory.getDish(parseInt($routeParams._id,10));                        
+    $scope.dish = dish;
+        }]);
 app.controller('DishCommentController', ['$scope', function ($scope) {
     $scope.feedback = {Name:"", comments:"",rating:"" , dates:""};
     //Step 1: Create a JavaScript object to hold the comment from the form

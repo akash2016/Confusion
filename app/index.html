@@ -79,9 +79,8 @@
             </div>
         </div>
     </header>
-    <ng-include src="'menu.html'"></ng-include>
-    <ng-include src="'dishDetail.html'"></ng-include>
-    <ng-include src="'Ristorante Con Fusion_ About Us.html'"></ng-include>
+    <ng-view></ng-view>
+    
     
     
     <footer class="row-footer">
@@ -132,6 +131,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controller.js"></script>
     <script src="scripts/service.js"></script>
+     <script src="../bower_components/angular-route/angular-route.min.js"></script>
 <!-- endbuild -->
 
 </body>
