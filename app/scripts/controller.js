@@ -81,11 +81,10 @@ app.controller('FeedbackController', ['$scope', function ($scope) {
         }
     };
         }])
-app.controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
-   
-    var dish= menuFactory.getDish(parseInt($routeParams._id,10));                        
-    $scope.dish = dish;
-        }]);
+app.controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
+            var dish= menuFactory.getDish(parseInt($stateParams._id,10));
+                        $scope.dish = dish;
+                    }])
 app.controller('DishCommentController', ['$scope', function ($scope) {
     $scope.feedback = {Name:"", comments:"",rating:"" , dates:""};
     //Step 1: Create a JavaScript object to hold the comment from the form
@@ -100,3 +99,5 @@ app.controller('DishCommentController', ['$scope', function ($scope) {
         //Step 5: reset your JavaScript object that holds your comment
     }
         }]);
+
+app.controller('IndexController', ['$scope', function($scope) {}]);
